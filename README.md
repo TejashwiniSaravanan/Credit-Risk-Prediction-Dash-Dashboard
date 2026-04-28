@@ -207,6 +207,27 @@ To explore the full modeling pipeline, open `Jupyter Notebook.ipynb` in Jupyter 
 
 ---
 
+## Looker Studio vs Python Dash - Same Data, Two Tools
+
+This project and the [companion Looker Studio project](https://github.com/TejashwiniSaravanan/Credit-Risk-Looker-Studio-Dashboard) use the exact same 425-record credit risk dataset but approach it with completely different tools for completely different audiences.
+
+| | Python Dash | Looker Studio |
+|---|---|---|
+| **Code required** | Full Python pipeline | None |
+| **Primary audience** | Data teams, technical reviewers | Business stakeholders, executives |
+| **Build time** | Slower - coded from scratch | Fast - drag and drop |
+| **Customization** | Unlimited with Plotly | Limited to built-in chart types |
+| **Data connection** | Static Excel file loaded in pandas | Live via Google Sheets |
+| **Deployment** | Required ngrok tunnel | Instant public URL |
+| **ML integration** | Decision Tree classifier built in | None |
+| **Best for** | Building and evaluating predictive models | Exploring and communicating patterns |
+
+**What the comparison reveals:** The Dash project adds a layer that Looker Studio cannot provide - a trained model, feature importance ranking, and confusion matrix that quantify which variables actually predict risk and where the model fails. Looker Studio surfaces the demographic and behavioral patterns faster with no code - the Sankey diagram and funnel chart immediately showed marital status and age-gender risk patterns without writing a single line.
+
+In a real business setting, both tools would be used together: Looker Studio for the executive dashboard that refreshes automatically, Python Dash for the data science team that needs to understand model behavior and iterate on predictions. Building both on the same dataset demonstrates exactly that end-to-end capability.
+
+---
+
 ## Limitations and What I Would Do Next
 
 The dataset size limits the model's ability to generalize. A larger dataset with more records would give the Decision Tree more examples to learn from and reduce prediction variance.
